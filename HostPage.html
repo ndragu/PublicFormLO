@@ -1,0 +1,32 @@
+
+<html>
+
+<script src="https://js-test-dev-ed.my.site.com/poc/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+    <script>
+
+    const appName = 'c:OutApp';
+    const componentName = 'c:demoForm';
+    const lightningEndpoint = 'https://js-test-dev-ed.my.site.com/poc';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {};
+
+    $Lightning.use(
+            appName,
+            function (){
+                $Lightning.createComponent(
+                        componentName,
+                        componentAttributes,
+                        targetElement,
+                        function (cmp){
+                        console.log('LWC created');
+                        }
+                );
+            },
+            lightningEndpoint
+    );
+
+    </script>
+</html>
